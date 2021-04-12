@@ -1,0 +1,28 @@
+char tmp[100];
+                        strcpy(tmp,"sudo iw ");
+                        strcat(tmp,argv[1]);
+                        strcat(tmp," set type monitor");
+                        system(tmp);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void main(int argc, char *argv[]){
+	if(argc==1){
+		printf("Necesitas ingresar argumentos.\nPrueba [ manitmid --help ]");
+	}else if(argc==2){
+		if(strcmp(argv[1],"--help")==0){
+			printf("igual");
+		}else if(strcmp(argv[1],"--flow")==0||strcmp(argv[1],"-f")==0){
+			system("echo 1 > /proc/sys/net/ipv4/ip_forward");
+			system("cat /proc/sys/net/ipv4/ip_forward");
+		}else{
+			printf("No se reconoce argumento.\nPrueba [ manitmid --help ]");
+		}
+	}else if(argc==4){
+		if(strcmp(argv[1],"--arpspoof")==0||strcmp(argv[1],"-a")==0){
+			
+			system("arpspoof -i");
+		}
+	}
+}

@@ -1,0 +1,7 @@
+#!/bin/sh
+sudo apt-get update && sudo apt-get upgrade
+sudo full-upgrade
+python setup.py install
+sudo apt install python3-pip
+sudo pip install Twisted pyopenssl
+sudo pip install service_identity 
