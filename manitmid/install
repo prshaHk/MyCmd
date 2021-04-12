@@ -1,8 +1,13 @@
 #!/bin/sh
+echo "Ejecutando update y upgrade"
 sudo apt-get update && sudo apt-get upgrade
+echo "Ejecutando full-upgrade"
 sudo full-upgrade
+echo "Ejecutando setup.py sslstrip"
 python setup.py install
+echo "instalando python3-pip"
 sudo apt install python3-pip
+echo "pip install twisted pyOpenSSL service_identity"
 sudo pip install twisted pyOpenSSL
 sudo pip install service_identity 
-sudo pip install virtualenv 
+#sudo pip install virtualenv 
