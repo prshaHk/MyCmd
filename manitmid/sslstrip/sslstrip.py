@@ -22,6 +22,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
 USA
 
+Traducido al espanol por PrShaHk
 """
 
 from twisted.web import http
@@ -36,17 +37,17 @@ import sys, getopt, logging, traceback, string, os
 gVersion = "0.9"
 
 def usage():
-    print("\nsslstrip " + gVersion + " by Moxie Marlinspike")
-    print("Usage: sslstrip <options>\n")
-    print("Options:")
-    print("-w <filename>, --write=<filename> Specify file to log to (optional).")
-    print("-p , --post                       Log only SSL POSTs. (default)")
-    print("-s , --ssl                        Log all SSL traffic to and from server.")
-    print("-a , --all                        Log all SSL and HTTP traffic to and from server.")
-    print("-l <port>, --listen=<port>        Port to listen on (default 10000).")
-    print("-f , --favicon                    Substitute a lock favicon on secure requests.")
-    print("-k , --killsessions               Kill sessions in progress.")
-    print("-h                                Print this help message.\n\n")
+    print("\nsslstrip ",gVersion," by Moxie Marlinspike\nTraducido al espanol por PrShaHk")
+    print("Uso: sslstrip <opciones>\n")
+    print("Opciones:")
+    print("-w <Nombre Archivo>, --write=<Nombre Archivo> Especifique el archivo para guardar el registro (opcional | por defecto sslstrip.log).")
+    print("-p , --post                       Registre solo POST SSL. (defecto)")
+    print("-s , --ssl                        Registre todo el trafico SSL hacia y desde el servidor.")
+    print("-a , --all                        Registre todo el trafico SSL y HTTP hacia y desde el servidor.")
+    print("-l <port>, --listen=<port>        Puerto para escuchar (predeterminado 10000).")
+    print("-f , --favicon                    Sustituya un favicon de bloqueo en solicitudes seguras.")
+    print("-k , --killsessions               Mata sesiones en curso.")
+    print("-h                                Imprime este mensaje de ayuda \n\n")
 
 def parseOptions(argv):
     logFile      = 'sslstrip.log'
@@ -99,7 +100,7 @@ def main(argv):
 
     reactor.listenTCP(int(listenPort), strippingFactory)
                 
-    print "\nsslstrip " + gVersion + " by Moxie Marlinspike running..."
+    print("\nsslstrip ",gVersion," by Moxie Marlinspike running...")
 
     reactor.run()
 

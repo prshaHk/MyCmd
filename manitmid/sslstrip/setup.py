@@ -18,7 +18,7 @@ setup  (name        = 'sslstrip',
         data_files = [('share/sslstrip', ['README', 'COPYING', 'lock.ico'])],
        )
 
-print "Cleaning up..."
+print("Cleaning up...")
 try:
     removeall("build/")
     os.rmdir("build/")

@@ -18,7 +18,7 @@
 
 import logging, re, string
 
-from ServerConnection import ServerConnection
+from sslstrip.ServerConnection import ServerConnection
 
 class SSLServerConnection(ServerConnection):
 

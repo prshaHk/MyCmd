@@ -15,11 +15,14 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
 # USA
 #
-
-import logging, re, string, random, zlib, gzip, StringIO
+try:
+	from StringIO import StringIO
+except ImportError:
+	from io import StringIO
+import logging, re, string, random, zlib, gzip
 
 from twisted.web.http import HTTPClient
-from URLMonitor import URLMonitor
+from sslstrip.URLMonitor import URLMonitor
 
 class ServerConnection(HTTPClient):
 
